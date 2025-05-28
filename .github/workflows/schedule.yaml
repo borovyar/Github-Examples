@@ -5,7 +5,7 @@ on:
 jobs:
   # name of job
   hello_world:
-    runs-on: ubuntu:latest
+    runs-on: self-hosted
     steps:
     - name: Echo current time
       run: echo "The current server tiem is $(date)"
