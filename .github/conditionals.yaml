@@ -1,0 +1,14 @@
+name: "Example of conditions"
+on: [push]
+jobs:
+  hello-world:
+    if: github.repository == 'octo-org/octo-repo-prod'
+    runs-on: self-hosted
+    steps:
+      - name: "Hello world"
+        run: echo "Hello world!"
+  goodbye-moon:
+    runs-on: self-hosted
+    steps:
+      - name: "Goodbye moon"
+        run: echo "Goodbye moon!"
