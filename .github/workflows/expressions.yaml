@@ -21,4 +21,4 @@ jobs:
       - name: format() call
         run: echo ${{ format('Hello {0}', 'World!') }}
       - name: convert job to JSON
-        run: echo "Job context in JSON {{ $toJSON(github.job) }}"
+        run: echo "Job context in JSON ${{ toJSON(github.job) }}"
