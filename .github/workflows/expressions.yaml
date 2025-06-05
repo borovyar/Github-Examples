@@ -1,0 +1,24 @@
+name: "Expressions"
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  expression-functions:
+    runs-on: self-hosted
+    steps:
+      - name: contains() call
+        if: contains('Hello', 'llo')
+        run: echo "contains('Hello', 'llo')"
+      - name: startsWith() call
+        if: startsWith('Hello', 'He')
+        run: echo "startsWith('Hello', 'He')"
+      - name: endsWith() call
+        if: endsWith('Hello', 'lo')
+        run: echo "endsWith('Hello', 'lo')"
+      - name: format() call
+        run: echo ${{ format('Hello {0}', 'World!') }}
+      - name: convert job to JSON
+        run: echo "Job context in JSON {{ $toJSON(github.job) }}"
